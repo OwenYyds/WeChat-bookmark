@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="card form-card">
+    <view class="field">
+      <text class="label">类型</text>
+      <radio-group class="type-row" bindchange="onTypeChange">
+        <label class="type-item">
+          <radio value="expense" checked="{{type==='expense'}}" color="#dc2626" />支出
+        </label>
+        <label class="type-item">
+          <radio value="income" checked="{{type==='income'}}" color="#0f766e" />收入
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="field">
+      <text class="label">金额</text>
+      <input class="input" type="digit" value="{{amount}}" placeholder="请输入金额" bindinput="onAmountInput" />
+    </view>
+
+    <view class="field">
+      <text class="label">分类</text>
+      <picker mode="selector" range="{{categories}}" bindchange="onCategoryChange">
+        <view class="picker">{{category}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">日期</text>
+      <picker mode="date" value="{{date}}" bindchange="onDateChange">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">备注</text>
+      <textarea class="textarea" value="{{note}}" placeholder="可选" bindinput="onNoteInput" />
+    </view>
+
+    <button class="button-primary submit" loading="{{saving}}" bindtap="onSubmit">
+      {{isEdit ? '更新记录' : '保存记录'}}
+    </button>
+  </view>
+</view>

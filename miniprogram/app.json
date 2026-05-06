@@ -1,0 +1,12 @@
+{
+  "pages": ["pages/index/index", "pages/add/add", "pages/profile/profile"],
+  "window": {
+    "navigationBarTitleText": "云记账本",
+    "navigationBarBackgroundColor": "#0F172A",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F8FAFC",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

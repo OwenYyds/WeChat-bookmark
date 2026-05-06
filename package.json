@@ -1,0 +1,15 @@
+{
+  "name": "wechat-bookmark",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A cloud-backed WeChat Mini Program for personal bookkeeping",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --project tsconfig.json",
+    "watch": "tsc --project tsconfig.json -w"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^4.1.0",
+    "typescript": "^5.8.3"
+  }
+}

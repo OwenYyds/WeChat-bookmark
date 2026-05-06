@@ -1,0 +1,9 @@
+node_modules/
+dist/
+miniprogram_npm/
+cloudfunctions/**/node_modules/
+.DS_Store
+
+# ignore compiled JS from TypeScript
+miniprogram/**/*.js
+cloudfunctions/**/*.js

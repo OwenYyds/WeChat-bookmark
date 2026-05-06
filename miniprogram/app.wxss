@@ -1,0 +1,21 @@
+page {
+  min-height: 100%;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 55%, #f0fdf4 100%);
+  color: #0f172a;
+  font-family: "PingFang SC", "SF Pro Text", sans-serif;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 28rpx rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(4rpx);
+}
+
+.button-primary {
+  border: none;
+  border-radius: 20rpx;
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  color: #ffffff;
+  font-weight: 600;
+}

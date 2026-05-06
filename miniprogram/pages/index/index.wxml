@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="card summary">
+    <view class="summary-title">月度概览</view>
+    <picker mode="date" fields="month" value="{{month}}" bindchange="onMonthChange">
+      <view class="month-picker">{{month}}</view>
+    </picker>
+    <view class="summary-grid">
+      <view>
+        <text class="label">收入</text>
+        <text class="value income">+{{incomeTotal}}</text>
+      </view>
+      <view>
+        <text class="label">支出</text>
+        <text class="value expense">-{{expenseTotal}}</text>
+      </view>
+      <view>
+        <text class="label">结余</text>
+        <text class="value">{{balance}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="list-head">
+    <text>账单明细</text>
+    <button class="button-primary add-btn" bindtap="onTapCreate" size="mini">+ 记一笔</button>
+  </view>
+
+  <view wx:if="{{!records.length && !loading}}" class="card empty">
+    <text>本月还没有账单，开始记录第一笔吧。</text>
+  </view>
+
+  <view wx:for="{{records}}" wx:key="_id" class="card item">
+    <view class="item-top">
+      <text class="category">{{item.category}}</text>
+      <text class="amount {{item.isExpense ? 'expense' : 'income'}}">
+        {{item.isExpense ? '-' : '+'}}{{item.displayAmount}}
+      </text>
+    </view>
+    <view class="item-middle" wx:if="{{item.note}}">{{item.note}}</view>
+    <view class="item-bottom">
+      <text>{{item.date}}</text>
+      <view class="actions">
+        <text data-id="{{item._id}}" bindtap="onTapEdit">编辑</text>
+        <text class="danger" data-id="{{item._id}}" bindtap="onTapDelete">删除</text>
+      </view>
+    </view>
+  </view>
+</view>
